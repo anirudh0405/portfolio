@@ -234,14 +234,63 @@
             background-color: var(--accent-color);
             color: var(--bg-color-primary);
         }
+        
+        /* ----- Achievements (New Section Style) ----- */
+        #achievements {
+            background-color: var(--bg-color-primary);
+        }
+        
+        .achievement-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .achievement-card {
+            background-color: var(--bg-color-secondary);
+            padding: 25px;
+            border-radius: var(--border-radius);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .achievement-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+        }
+        
+        .achievement-card h3 {
+            color: var(--text-color-primary);
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+        }
+        
+        .achievement-card p {
+            font-size: 1.1rem;
+            color: var(--accent-color);
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+        
+        .achievement-card .date-tag {
+            display: inline-block;
+            background-color: var(--bg-color-primary);
+            color: var(--text-color-primary);
+            padding: 5px 15px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 400;
+        }
 
         /* ----- Education ----- */
         #education {
-            background-color: var(--bg-color-primary);
+            background-color: var(--bg-color-secondary); /* Moved to secondary for contrast */
         }
 
         .education-item {
-            background-color: var(--bg-color-secondary);
+            background-color: var(--bg-color-primary); /* Adjusted for contrast with the new #education background */
             padding: 20px;
             border-radius: var(--border-radius);
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
@@ -311,6 +360,10 @@
         }
 
         /* ----- Certificates ----- */
+        #certificates {
+            background-color: var(--bg-color-primary); /* Adjusted for contrast with the new #education background */
+        }
+        
         .certificates-grid {
             display: flex;
             flex-wrap: wrap;
@@ -425,7 +478,6 @@
 </head>
 <body>
 
-    <!-- ----- Header ----- -->
     <header>
         <div class="container">
             <nav>
@@ -434,7 +486,7 @@
                     <li><a href="#about">About</a></li>
                     <li><a href="#skills">Skills</a></li>
                     <li><a href="#projects">Projects</a></li>
-                    <li><a href="#education">Education</a></li>
+                    <li><a href="#achievements">Achievements</a></li> <li><a href="#education">Education</a></li>
                     <li><a href="#certificates">Certificates</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
@@ -442,7 +494,6 @@
         </div>
     </header>
 
-    <!-- ----- About Me Section ----- -->
     <section id="about" class="section fade-in">
         <div class="container about-content">
             <div class="about-image">
@@ -456,7 +507,6 @@ ECE undergrad specializing in software development, embedded systems, and AI‑p
         </div>
     </section>
 
-    <!-- ----- Skills & Tools Section ----- -->
     <section id="skills" class="section fade-in">
         <h2 class="section-title">Skills & Tools</h2>
         <div class="container skills-grid">
@@ -492,11 +542,9 @@ ECE undergrad specializing in software development, embedded systems, and AI‑p
                 <img src="assets/vs.jpg" alt="VSCode">
                 <h4>VSCode</h4>
             </div>
-            <!-- Add more skill cards here -->
-        </div>
+            </div>
     </section>
 
-    <!-- ----- Projects Section ----- -->
     <section id="projects" class="section fade-in">
         <h2 class="section-title">Projects</h2>
         <div class="container projects-grid">
@@ -519,7 +567,22 @@ ECE undergrad specializing in software development, embedded systems, and AI‑p
         </div>
     </section>
 
-    <!-- ----- Education Section ----- -->
+    <section id="achievements" class="section fade-in">
+        <h2 class="section-title">Achievements</h2>
+        <div class="container achievement-grid">
+            <div class="achievement-card">
+                <h3>Jnana Cauvery 2K25 — State-Level Project Expo</h3>
+                <p>1st Prize</p>
+                <span class="date-tag">May 2025</span>
+            </div>
+            <div class="achievement-card">
+                <h3>INNOVONX Hackathon — DSATM</h3>
+                <p>3rd Prize</p>
+                <span class="date-tag">Apr 2025</span>
+            </div>
+        </div>
+    </section>
+    
     <section id="education" class="section fade-in">
         <h2 class="section-title">Education</h2>
         <div class="container">
@@ -530,7 +593,6 @@ ECE undergrad specializing in software development, embedded systems, and AI‑p
         </div>
     </section>
 
-    <!-- ----- Certificates Section ----- -->
     <section id="certificates" class="section fade-in">
         <h2 class="section-title">Certificates</h2>
         <div class="container certificates-grid">
@@ -549,13 +611,11 @@ ECE undergrad specializing in software development, embedded systems, and AI‑p
         </div>
     </section>
 
-    <!-- The Modal -->
     <div id="myModal" class="modal">
         <span class="close">&times;</span>
         <img class="modal-content" id="certificate-img">
     </div>
 
-    <!-- ----- Contact Me Section ----- -->
     <section id="contact" class="section fade-in">
         <h2 class="section-title">Contact Me</h2>
         <div class="container contact-links">
