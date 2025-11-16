@@ -1,19 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Anirudh H S - Portfolio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
-        /* CSS for the entire portfolio */
         :root {
             --bg-color-primary: #121212;
             --bg-color-secondary: #1e1e1e;
             --text-color-primary: #f0f0f0;
-            --accent-color: #00bcd4; /* A vibrant cyan/teal */
+            --accent-color: #00bcd4;
             --border-radius: 10px;
         }
 
@@ -37,7 +36,6 @@
             padding: 0 20px;
         }
 
-        /* ----- Header & Navigation ----- */
         header {
             position: sticky;
             top: 0;
@@ -80,7 +78,6 @@
             background-color: var(--accent-color);
         }
 
-        /* ----- Sections ----- */
         .section {
             padding: 80px 0;
         }
@@ -104,7 +101,6 @@
             border-radius: 2px;
         }
 
-        /* ----- About Me ----- */
         #about {
             background-color: var(--bg-color-secondary);
         }
@@ -135,8 +131,7 @@
             font-size: 2.5rem;
             margin-bottom: 10px;
         }
-        
-        /* ----- Skills & Tools ----- */
+
         #skills {
             background-color: var(--bg-color-primary);
         }
@@ -153,7 +148,6 @@
             border-radius: var(--border-radius);
             text-align: center;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
-            position: relative;
         }
 
         .skill-card:hover {
@@ -165,12 +159,11 @@
             font-size: 1.2rem;
             margin-top: 10px;
         }
-        
+
         .skill-card img {
             width: 60px;
             height: 60px;
             border-radius: var(--border-radius);
-            filter: grayscale(80%);
             transition: filter 0.3s ease;
         }
 
@@ -178,7 +171,6 @@
             filter: grayscale(0%);
         }
 
-        /* ----- Projects ----- */
         #projects {
             background-color: var(--bg-color-secondary);
         }
@@ -234,12 +226,11 @@
             background-color: var(--accent-color);
             color: var(--bg-color-primary);
         }
-        
-        /* ----- Achievements (New Section Style) ----- */
+
         #achievements {
             background-color: var(--bg-color-primary);
         }
-        
+
         .achievement-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -247,33 +238,34 @@
             max-width: 900px;
             margin: 0 auto;
         }
-        
+
         .achievement-card {
             background-color: var(--bg-color-secondary);
             padding: 25px;
             border-radius: var(--border-radius);
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: center;
         }
-        
+
         .achievement-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
         }
-        
+
         .achievement-card h3 {
             color: var(--text-color-primary);
             font-size: 1.4rem;
             margin-bottom: 10px;
         }
-        
+
         .achievement-card p {
             font-size: 1.1rem;
             color: var(--accent-color);
             font-weight: 600;
             margin-bottom: 15px;
         }
-        
+
         .achievement-card .date-tag {
             display: inline-block;
             background-color: var(--bg-color-primary);
@@ -282,15 +274,35 @@
             border-radius: 50px;
             font-size: 0.9rem;
             font-weight: 400;
+            margin-bottom: 15px;
         }
 
-        /* ----- Education ----- */
+        /* Unified thumbnail styling for certificates/achievements */
+        .proof-image {
+            width: 100%;
+            max-width: 250px;
+            height: auto;
+            border-radius: var(--border-radius);
+            margin-top: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .proof-image:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+        }
+
         #education {
-            background-color: var(--bg-color-secondary); /* Moved to secondary for contrast */
+            background-color: var(--bg-color-secondary);
         }
 
         .education-item {
-            background-color: var(--bg-color-primary); /* Adjusted for contrast with the new #education background */
+            background-color: var(--bg-color-primary);
             padding: 20px;
             border-radius: var(--border-radius);
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
@@ -299,7 +311,7 @@
             text-align: center;
             transition: transform 0.3s ease;
         }
-        
+
         .education-item:hover {
             transform: translateY(-5px);
         }
@@ -309,22 +321,19 @@
             margin-bottom: 5px;
         }
 
-        /* The Modal (background) */
+        /* === Polished Modal Section === */
         .modal {
-            display: none; /* Hidden by default */
-            position: fixed; /* Stay in place */
-            z-index: 1001; /* Sit on top */
-            padding-top: 50px; /* Location of the box */
+            display: none;
+            position: fixed;
+            z-index: 1001;
+            padding-top: 50px;
             left: 0;
             top: 0;
-            width: 100%; /* Full width */
-            height: 100%; /* Full height */
-            overflow: auto; /* Enable scroll if needed */
-            background-color: rgb(0,0,0); /* Fallback color */
-            background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.9);
         }
-
-        /* Modal Content (image) */
         .modal-content {
             margin: auto;
             display: block;
@@ -334,14 +343,10 @@
             animation-name: zoom;
             animation-duration: 0.6s;
         }
-
-        /* Add Animation */
         @keyframes zoom {
             from {transform: scale(0)}
             to {transform: scale(1)}
         }
-
-        /* The Close Button */
         .close {
             position: absolute;
             top: 15px;
@@ -359,11 +364,10 @@
             cursor: pointer;
         }
 
-        /* ----- Certificates ----- */
         #certificates {
-            background-color: var(--bg-color-primary); /* Adjusted for contrast with the new #education background */
+            background-color: var(--bg-color-primary);
         }
-        
+
         .certificates-grid {
             display: flex;
             flex-wrap: wrap;
@@ -389,23 +393,6 @@
             transform: translateY(-5px);
         }
 
-        .certificate-thumbnail {
-            width: 250px;
-            height: 180px;
-            object-fit: cover;
-            border-radius: var(--border-radius);
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-            cursor: pointer;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            margin-top: 15px;
-        }
-
-        .certificate-thumbnail:hover {
-            transform: scale(1.05);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
-        }
-
-        /* ----- Contact Me ----- */
         #contact {
             background-color: var(--bg-color-secondary);
             text-align: center;
@@ -435,36 +422,16 @@
             width: 50px;
             height: 50px;
             margin-bottom: 10px;
-            transition: filter 0.3s ease;
             border-radius: 10px;
         }
-        
 
-        /* Responsive Design */
         @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-
-            .about-text h1 {
-                font-size: 2rem;
-            }
-
-            .section-title {
-                font-size: 2rem;
-            }
-
-            .about-content {
-                text-align: center;
-            }
-            
-            .education-item {
-                width: calc(100% - 40px);
-                margin: 20px auto;
-            }
+            .nav-links { display: none; }
+            .about-text h1 { font-size: 2rem; }
+            .section-title { font-size: 2rem; }
+            .education-item { width: calc(100% - 40px); margin: 20px auto; }
         }
 
-        /* Animations */
         .fade-in {
             opacity: 0;
             transform: translateY(20px);
@@ -474,224 +441,185 @@
             opacity: 1;
             transform: translateY(0);
         }
+
     </style>
 </head>
 <body>
 
-    <header>
-        <div class="container">
-            <nav>
-                <div class="logo">Anirudh H S</div>
-                <ul class="nav-links">
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#skills">Skills</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#achievements">Achievements</a></li> <li><a href="#education">Education</a></li>
-                    <li><a href="#certificates">Certificates</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-
-    <section id="about" class="section fade-in">
-        <div class="container about-content">
-            <div class="about-image">
-                <img src="assets/ani.jpg" alt="Anirudh H S">
-            </div>
-            <div class="about-text">
-                <h1 style="color: #00bcd4;"> Hello, I'm Anirudh H S </h1>
-                <p>Building intelligent, real‑world robotics & embedded systems,
-ECE undergrad specializing in software development, embedded systems, and AI‑powered consumer robotics. Passionate about turning hardware into smart, connected products.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="skills" class="section fade-in">
-        <h2 class="section-title">Skills & Tools</h2>
-        <div class="container skills-grid">
-            <div class="skill-card">
-                <img src="assets/html.png" alt="HTML Icon">
-                <h4>HTML5</h4>
-            </div>
-            <div class="skill-card">
-                <img src="assets/css.png" alt="CSS Icon">
-                <h4>CSS3</h4>
-            </div>
-            <div class="skill-card">
-                <img src="assets/C.png" alt="C">
-                <h4>C</h4>
-            </div>
-            <div class="skill-card">
-                <img src="assets/C++.jpg" alt="C++">
-                <h4>C++</h4>
-            </div>
-            <div class="skill-card">
-                <img src="assets/NR.png" alt="Node-red">
-                <h4>Node-red</h4>
-            </div>
-            <div class="skill-card">
-                <img src="assets/m.png" alt="ModelSim">
-                <h4>ModelSim</h4>
-            </div>
-            <div class="skill-card">
-                <img src="assets/ard.jpg" alt="Arduino IDE">
-                <h4>Arduino IDE</h4>
-            </div>
-            <div class="skill-card">
-                <img src="assets/vs.jpg" alt="VSCode">
-                <h4>VSCode</h4>
-            </div>
-            </div>
-    </section>
-
-    <section id="projects" class="section fade-in">
-        <h2 class="section-title">Projects</h2>
-        <div class="container projects-grid">
-            <div class="project-card">
-                <img src="assets/sm.jpg" alt="Project 1">
-                <div class="project-content">
-                    <h3>Real‑Time Cloud‑Based Energy Monitoring System</h3>
-                    <p>IoT sensors stream live voltage, current, and power data to a cloud server via MQTT for remote monitoring and scalable analytics. Includes slab‑based billing logic and a responsive dashboard for trends, alerts, and usage‑cost insights.</p>
-                    <a href="https://github.com/anirudh0405/Real-time-cloud-based-smart-energy-meter">View Project</a>
-                </div>
-            </div>
-            <div class="project-card">
-                <img src="assets/123.jpg" alt="Project 2">
-                <div class="project-content">
-                    <h3>Docnest</h3>
-                    <p>DocNest is a simple healthcare management app that lets patients book doctor appointments with ease. It provides a streamlined interface for managing personal details, appointment schedules, and doctor information.</p>
-                    <a href="https://github.com/anirudh0405/docnest">View Project</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="achievements" class="section fade-in">
-        <h2 class="section-title">Achievements</h2>
-        <div class="container achievement-grid">
-            <div class="achievement-card">
-                <h3>Jnana Cauvery 2K25 — State-Level Project Expo</h3>
-                <p>1st Prize</p>
-                <span class="date-tag">May 2025</span>
-            </div>
-            <div class="achievement-card">
-                <h3>INNOVONX Hackathon — DSATM</h3>
-                <p>3rd Prize</p>
-                <span class="date-tag">Apr 2025</span>
-            </div>
-        </div>
-    </section>
-    
-    <section id="education" class="section fade-in">
-        <h2 class="section-title">Education</h2>
-        <div class="container">
-            <div class="education-item">
-                <h4>BE in Electronics and communication Engineering</h4>
-                <p>Dayananda Sagar Academy of Technology and Management | 2023-2027</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="certificates" class="section fade-in">
-        <h2 class="section-title">Certificates</h2>
-        <div class="container certificates-grid">
-            <div class="certificate-item">
-                <p>Udemy | June 1, 2025</p>
-                <img src="assets/python_page-0001.jpg" alt="Python OOP Certificate" class="certificate-thumbnail" onclick="openModal(event, 'python_page-0001.jpg')">
-            </div>
-            <div class="certificate-item">
-                <p>Udemy | May 5, 2025</p>
-                <img src="assets/c_page-0001.jpg" alt="C Programming Certificate" class="certificate-thumbnail" onclick="openModal(event, 'c_page-0001.jpg')">
-            </div>
-            <div class="certificate-item">
-                <p>Forage | June 22, 2025</p>
-                <img src="assets/forage_page-0001.jpg" alt="Solutions Architecture Job Simulation Certificate" class="certificate-thumbnail" onclick="openModal(event, 'forage_page-0001.jpg')">
-            </div>
-        </div>
-    </section>
-
-    <div id="myModal" class="modal">
-        <span class="close">&times;</span>
-        <img class="modal-content" id="certificate-img">
+<header>
+    <div class="container">
+        <nav>
+            <div class="logo">Anirudh H S</div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#achievements">Achievements</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#certificates">Certificates</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
     </div>
+</header>
 
-    <section id="contact" class="section fade-in">
-        <h2 class="section-title">Contact Me</h2>
-        <div class="container contact-links">
-            <a href="mailto:anirudhhs11@gmail.com" class="contact-link">
-                <img src="assets/gmail.png" alt="Gmail">
-                <p>Gmail</p>
-            </a>
-            <a href="https://github.com/anirudh0405" target="_blank" class="contact-link">
-                <img src="assets/git.png" alt="GitHub">
-                <p>GitHub</p>
-            </a>
-            <a href="https://www.linkedin.com/in/anirudhhs" target="_blank" class="contact-link">
-                <img src="assets/linkedin.png" alt="LinkedIn">
-                <p>LinkedIn</p>
-            </a>
+<section id="about" class="section fade-in">
+    <div class="container about-content">
+        <div class="about-image">
+            <img src="assets/ani.jpg" alt="Anirudh H S">
         </div>
-    </section>
+        <div class="about-text">
+            <h1 style="color: #00bcd4;"> Hello, I'm Anirudh H S </h1>
+            <p>Building intelligent, real-world robotics & embedded systems,
+            ECE undergrad specializing in software development, embedded systems, and AI-powered consumer robotics. Passionate about turning hardware into smart, connected products.</p>
+        </div>
+    </div>
+</section>
 
-    <script>
-        // JavaScript for smooth scrolling
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
+<section id="skills" class="section fade-in">
+    <h2 class="section-title">Skills & Tools</h2>
+    <div class="container skills-grid">
+        <div class="skill-card"><img src="assets/html.png" alt="HTML"><h4>HTML5</h4></div>
+        <div class="skill-card"><img src="assets/css.png" alt="CSS"><h4>CSS3</h4></div>
+        <div class="skill-card"><img src="assets/C.png" alt="C"><h4>C</h4></div>
+        <div class="skill-card"><img src="assets/C++.jpg" alt="C++"><h4>C++</h4></div>
+        <div class="skill-card"><img src="assets/NR.png" alt="Node-RED"><h4>Node-RED</h4></div>
+        <div class="skill-card"><img src="assets/m.png" alt="ModelSim"><h4>ModelSim</h4></div>
+        <div class="skill-card"><img src="assets/ard.jpg" alt="Arduino"><h4>Arduino IDE</h4></div>
+        <div class="skill-card"><img src="assets/vs.jpg" alt="VSCode"><h4>VSCode</h4></div>
+    </div>
+</section>
 
-        // Get the modal
-        var modal = document.getElementById("myModal");
-        var modalImg = document.getElementById("certificate-img");
+<section id="projects" class="section fade-in">
+    <h2 class="section-title">Projects</h2>
+    <div class="container projects-grid">
+        <div class="project-card">
+            <img src="assets/sm.jpg" alt="Project 1">
+            <div class="project-content">
+                <h3>Real-Time Cloud-Based Energy Monitoring System</h3>
+                <p>IoT sensors stream live voltage, current, and power data to a cloud server via MQTT for remote monitoring and scalable analytics.</p>
+                <a href="https://github.com/anirudh0405/Real-time-cloud-based-smart-energy-meter">View Project</a>
+            </div>
+        </div>
+        <div class="project-card">
+            <img src="assets/123.jpg" alt="Project 2">
+            <div class="project-content">
+                <h3>Docnest</h3>
+                <p>DocNest is a healthcare app that lets patients book doctor appointments, manage schedules, and access information easily.</p>
+                <a href="https://github.com/anirudh0405/docnest">View Project</a>
+            </div>
+        </div>
+    </div>
+</section>
 
-        function openModal(e, imgSrc) {
-            e.preventDefault();
-            modal.style.display = "block";
-            modalImg.src = imgSrc;
-        }
+<section id="achievements" class="section fade-in">
+    <h2 class="section-title">Achievements</h2>
+    <div class="container achievement-grid">
+        <div class="achievement-card">
+            <h3>INNOVONX Hackathon — DSATM</h3>
+            <p>3rd Prize</p>
+            <span class="date-tag">Apr 2025</span>
+            <!-- unified class + correct assets path -->
+            <img src="assets/dsatm.jpg" alt="Hackathon Certificate" class="proof-image" onclick="openModal(event, 'assets/dsatm.jpg')">
+        </div>
+        <div class="achievement-card">
+            <h3>Jnana Cauvery 2K25 — State-Level Project Expo</h3>
+            <p>1st Prize</p>
+            <span class="date-tag">May 2025</span>
+            <img src="assets/Pes.jpg" alt="Jnana Cauvery Certificate" class="proof-image" onclick="openModal(event, 'assets/Pes.jpg')">
+        </div>
+        <div class="achievement-card">
+            <h3>Vyuhanthra 2025 — State-Level Project Expo</h3>
+            <p>2nd Prize</p>
+            <span class="date-tag">Oct 2025</span>
+            <img src="assets/cit.jpg" alt="Vyuhanthra Certificate" class="proof-image" onclick="openModal(event, 'assets/cit.jpg')">
+        </div>
+    </div>
+</section>
 
-        // Get the <span> element that closes the modal
-        var span = document.getElementsByClassName("close")[0];
+<section id="education" class="section fade-in">
+    <h2 class="section-title">Education</h2>
+    <div class="container">
+        <div class="education-item">
+            <h4>Bachelor of Engineering in Electronics and Communication</h4>
+            <p>Dayananda Sagar Academy of Technology and Management | 2023-2027</p>
+        </div>
+    </div>
+</section>
 
-        // When the user clicks on <span> (x), close the modal
-        span.onclick = function() {
+<section id="certificates" class="section fade-in">
+    <h2 class="section-title">Certificates</h2>
+    <div class="container certificates-grid">
+        <div class="certificate-item">
+            <p>Udemy | June 1, 2025</p>
+            <img src="assets/python.jpg" alt="Python OOP Certificate" class="proof-image" onclick="openModal(event, 'assets/python.jpg')">
+        </div>
+        <div class="certificate-item">
+            <p>Udemy | May 5, 2025</p>
+            <img src="assets/c.jpg" alt="C Programming Certificate" class="proof-image" onclick="openModal(event, 'assets/c.jpg')">
+        </div>
+        <div class="certificate-item">
+            <p>Forage | June 22, 2025</p>
+            <img src="assets/forage.jpg" alt="Solutions Architecture Job Simulation Certificate" class="proof-image" onclick="openModal(event, 'assets/forage.jpg')">
+        </div>
+    </div>
+</section>
+
+<section id="contact" class="section fade-in">
+    <h2 class="section-title">Contact</h2>
+    <div class="container contact-links">
+        <a href="mailto:anirudhhs0405@gmail.com" class="contact-link">
+            <img src="assets/gmail.png" alt="Gmail">
+            <span>Email</span>
+        </a>
+        <a href="https://github.com/anirudh0405" class="contact-link">
+            <img src="assets/git.png" alt="GitHub">
+            <span>GitHub</span>
+        </a>
+        <a href="https://www.linkedin.com/in/anirudh-h-s-249968254/" class="contact-link">
+            <img src="assets/linkedin.png" alt="LinkedIn">
+            <span>LinkedIn</span>
+        </a>
+    </div>
+</section>
+
+<!-- Modal for Images -->
+<div id="imageModal" class="modal">
+  <span class="close" onclick="closeModal()">&times;</span>
+  <img class="modal-content" id="modalImage" alt="Certificate preview">
+</div>
+
+<script>
+    function openModal(event, imgSrc) {
+        event.stopPropagation();
+        const modal = document.getElementById("imageModal");
+        const modalImg = document.getElementById("modalImage");
+        modal.style.display = "block";
+        modalImg.src = imgSrc;
+    }
+
+    function closeModal() {
+        document.getElementById("imageModal").style.display = "none";
+    }
+
+    window.onclick = function(event) {
+        const modal = document.getElementById("imageModal");
+        if (event.target === modal) {
             modal.style.display = "none";
         }
+    }
 
-        // When the user clicks anywhere outside of the modal, close it
-        window.onclick = function(event) {
-            if (event.target == modal) {
-                modal.style.display = "none";
+    const sections = document.querySelectorAll('.fade-in');
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
             }
-        }
-
-        // Intersection Observer for fade-in effect on scroll
-        document.addEventListener('DOMContentLoaded', () => {
-            const sections = document.querySelectorAll('.fade-in');
-            const observerOptions = {
-                root: null,
-                threshold: 0.2,
-                rootMargin: '0px'
-            };
-
-            const observer = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, observerOptions);
-
-            sections.forEach(section => {
-                observer.observe(section);
-            });
         });
-    </script>
+    }, { threshold: 0.2 });
+
+    sections.forEach(section => observer.observe(section));
+</script>
+
 </body>
 </html>
